@@ -1,0 +1,143 @@
+\documentclass[a4paper]{article}
+\usepackage{fullpage}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage{tocloft}
+\usepackage{longtable}
+\usepackage{framed}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\robustify\cftdotfill
+%\setlist{nolistsep}
+\nobibliography*
+
+%\setlist{leftmargin=*,after=\setlength{\rightmargin}{\leftmargin}}
+%\setlist{labelwidth=\widthof{0.},leftmargin={\labelwidth+\labelsep},rightmargin=\leftmargin}
+\textheight=10in
+\pagestyle{empty}
+%\raggedright
+
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\area}[2]{\vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+%\newcommand{\ressubheading}[4]{{\renewcommand{\arraystretch}{1.0}%
+%\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		%\textbf{#1} & #2 \\
+		%\textit{#3} & \textit{#4}\\
+            %\end{tabular*}}\vspace{-5pt} }
+
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+
+\newcommand{\lineunder} {\vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {{\hspace*{-18pt}\vspace*{6pt}\large {\textsc{#1}}}
+    \vspace*{-6pt} %\lineunder
+}
+
+\newcommand{\employer} [3] {{\textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\}}
+
+\newcommand{\contact} [3]{\vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+%\newenvironment{achievements}{
+    %\begin{list}
+        %{$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    %\end{list}
+%}
+
+\newcommand{\schoolwithcourses} [4] {\textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {\textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\bibliographystyle{abbrv}
+\vspace*{-40pt}
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\huge \scshape {Sathappan Muthiah}}\\
+        %\input{personal}
+        %Arlington, VA $\cdot$ sathap1@vt.edu $\cdot$ 801-201-0619 $\cdot$ people.cs.vt.edu/\textasciitilde{}sathap1\\
+\end{center}
+\small
+4607, Wilson Blvd\hfill E-mail:sathap1@vt.edu\\
+Arlington, VA-22203\hfill Work Permit: F1 until 2019 \hfill Phone:801-201-0619 \normalsize \lineunder
+%==== Education ====%
+%\header{Education}
+%\textbf{Virginia Tech}\hfill Arlington, VA\\
+%Phd Computer Science \textit{GPA: 3.8} \hfill June 2014 - December 2019\\
+%\vspace{2mm}
+
+%\input{personal}
+% -----------------------------------------
+%                BODY
+% -----------------------------------------
+\header{Education}
+\input{education}
+
+\header{Research Statement}
+\input{research}
+
+\vspace{1em}
+\header{Professional Experience}
+\input{professional}
+
+\vspace{1em}
+\header{Publications}
+\input{publications}
+
+\vspace{1em}
+\header{Activities}
+\input{activities}
+
+\vspace{1em}
+\header{Awards and Honors}
+\input{awards}
+
+\vspace{1em}
+\header{Technical Skills}
+\input{skills}
+
+\vspace{1em}
+\header{Participation in Conferences}
+\input{conferences}
+% 
+% \header{References}
+% \input{references}
+% 
+\nobibliography{grad_publication,misc}
+\end{document}
